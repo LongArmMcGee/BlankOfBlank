@@ -2,21 +2,27 @@ using UnityEngine;
 using System.Collections;
 
 public class GridSystem : MonoBehaviour {
-	ArrayList xGrid = new ArrayList();
-	ArrayList yGrid = new ArrayList();
-	ArrayList ObjectsOnTile = new ArrayList();
+	//ArrayList xGrid = new ArrayList();
+	//ArrayList yGrid = new ArrayList();
+	//Just use a 2d array, the game maps will be of static size
+	private Tile[,] gameMap
 
-	public int xAnchorPoint; //game map anchor point
-	public int yAnchorPOint;
+	//game map anchor points
+	//Will be used to line up game background and grid system
+	public int xAnchorPoint; 
+	public int yAnchorPoint;
+	
+	
 
-
-
-	private void CreateGrid(){
+	private void CreateGrid(int levelId){
 		//LoadGrid(level)
+		GridSystem(LoadGrid(levelId));
 		//
 	}
-
-	private void LoadGrid(){
-		
+	
+	//Load grid from csv and return the 2d array to be used in constructor of GridSystem (rename this class)
+	private void LoadGrid(int levelId){
+		//I think the FileHelpers.dll should provide us easy to use csv
+		//file read/write.
 	}
 }
