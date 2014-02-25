@@ -3,9 +3,8 @@ using System.Collections;
 
 public class Tile /*: MonoBehaviour DON'T NEED YET*/ { 
 	TileType type;
-	ArrayList<Entity> entityContainer;
-	LandEffect landEffect;
-	TileType type;
+	ArrayList entityContainer;
+	TerrainCost LandEffect;
 	//used for connecting tiles via 'portals' ie tunnels/caves/magic gates
 	Tile connectedTile;
 }
