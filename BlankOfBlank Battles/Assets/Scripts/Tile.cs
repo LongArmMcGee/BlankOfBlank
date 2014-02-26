@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using FileHelpers;
 
+[DelimitedRecord(",")] 
 public class Tile /*: MonoBehaviour DON'T NEED YET*/ { 
 	TileType type;
-	ArrayList entityContainer;
+	//ArrayList entityContainer;
 	TerrainCost LandEffect;
 	//used for connecting tiles via 'portals' ie tunnels/caves/magic gates
-	Tile connectedTile;
+	int connectedTile;
 }
 
 //Terrain cost
@@ -19,6 +21,7 @@ enum TerrainCost{
 
 //'elemental' damage
 enum TileType{
+	Normal,
 	Water,
 	Wood,
 	Ice,

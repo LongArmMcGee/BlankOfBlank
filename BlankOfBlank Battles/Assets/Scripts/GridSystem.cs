@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using FileHelperEngine;
+using FileHelpers;
 
 public class GridSystem : MonoBehaviour {
 	//ArrayList xGrid = new ArrayList();
@@ -12,6 +12,12 @@ public class GridSystem : MonoBehaviour {
 	//Will be used to line up game background and grid system
 	public int xAnchorPoint; 
 	public int yAnchorPoint;
+
+	void Awake(){
+		LoadGrid (0);
+	}
+
+
 	/*
 	void GridSystem(ArrayList[,]){
 	
@@ -24,9 +30,12 @@ public class GridSystem : MonoBehaviour {
 	}
 	
 	//Load grid from csv and return the 2d array to be used in constructor of GridSystem (rename this class)
-	private void LoadGrid(int levelId){
-		//I think the FileHelpers.dll should provide us easy to use csv
-		//file read/write.
+	private static void LoadGrid(int levelId){
+		//Create FileHelper
 		FileHelperEngine engine = new FileHelperEngine (typeof(Tile));
+		//Read csv file
+		Tile[] test = engine.ReadFile("csvtest.csv") as Tile[];
+
+		Debug.Log ("Tile Type: " + test[0]+test[1] + 1);
 	}
 }

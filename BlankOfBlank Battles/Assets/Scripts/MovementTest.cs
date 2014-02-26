@@ -49,8 +49,8 @@ public class MovementTest : MonoBehaviour {
 		tileSize = .32f;
 
 		player = GameObject.FindGameObjectWithTag (Tags.player);
-		string outstring = player.ToString();
-		Debug.Log ("output string:" + outstring,player);
+//		string outstring = player.ToString();
+//		Debug.Log ("output string:" + outstring,player);
 		moveSpeed = player.GetComponent<Attributes>().moveSpeed;
 
 		nextStepTime = Time.time;
